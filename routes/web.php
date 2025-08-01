@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Models\Contact;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response as HttpResponse;
@@ -27,18 +29,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/contact', fn() =>  Response::view('contact'));
+Route::get('/contacts/create',[ContactController::class,'create'])->name('contacts.create');
 
-Route::post('/contact', function (Request $request) {
-    // dd($request->query('test'));
-    return Response::json(["message" => "Hoal"])->setStatusCode(400);
-});
-
-Route::get('/change-password', fn() => Response::view('change-password'));
-Route::post('/change-password', function (Request $request) {
-    if (auth()->check()) {
-        return response("Password changed to {$request->get('password')}");
-    }else{ 
-   return response('Not Authenticated',401);
-    }
-});
+Route::post('/contacts/create',[ContactController::class,'store'])->name('contacts.store');
