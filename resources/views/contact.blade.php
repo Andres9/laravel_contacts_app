@@ -8,7 +8,7 @@
           <div class="card-header">Create New Contact</div>
 
           <div class="card-body">
-            <form method="POST" action="/contact">
+            <form method="POST" action="/contact?test=1&data=srtring">
 
               <div class="row mb-3">
                 <label for="name"
