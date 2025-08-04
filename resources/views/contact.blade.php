@@ -11,15 +11,15 @@
             <form method="POST" action="{{ route('contacts.store') }}">
               @csrf
 
-              <div class="row mb-3">
+         <div class="row mb-3">
                 <label for="name"
                   class="col-md-4 col-form-label text-md-end">Name</label>
 
                 <div class="col-md-6">
                   <input value="{{ old('name') }}" id="name" type="text"
                     class="form-control @error('name') is-invalid @enderror"
-                    name="name" value="{{ old('name') }}" 
-                    autocomplete="name" autofocus>
+                    name="name" autocomplete="name" autofocus>
+
 
                   @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -29,15 +29,15 @@
                 </div>
               </div>
 
-                  <div class="row mb-3">
-                <label for="phone_number"
+              <div class="row mb-3">
+                <label for="email"
                   class="col-md-4 col-form-label text-md-end">Phone Number</label>
 
                 <div class="col-md-6">
-                  <input value="{{ old('phone_number') }}" id="phone_number" type="number"
-                    class="form-control @error('phone_number') is-invalid @enderror"
-                    phone_number="phone_number" value="{{ old('phone_number') }}" 
-                    autocomplete="phone_number" autofocus>
+                  <input value="{{ old('phone_number') }}" id="phone_number"
+                    type="tel"
+                    class="@error('phone_number') is-invalid @enderror form-control"
+                    name="phone_number" autocomplete="phone_number">
 
                   @error('phone_number')
                     <span class="invalid-feedback" role="alert">
@@ -47,15 +47,15 @@
                 </div>
               </div>
 
-                    <div class="row mb-3">
+              <div class="row mb-3">
                 <label for="email"
                   class="col-md-4 col-form-label text-md-end">Email</label>
 
                 <div class="col-md-6">
-                  <input value="{{ old('email') }}" id="email" type="text"
-                    class="form-control @error('email') is-invalid @enderror"
-                    email="email" value="{{ old('email') }}" 
-                    autocomplete="email" autofocus>
+                  <input id="email" type="text"
+                    class="@error('email') is-invalid @enderror form-control"
+                    name="email" value="{{ old('email') }}"
+                    autocomplete="email">
 
                   @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -65,15 +65,14 @@
                 </div>
               </div>
 
-                    <div class="row mb-3">
-                <label for="age"
+              <div class="row mb-3">
+                <label for="email"
                   class="col-md-4 col-form-label text-md-end">Age</label>
 
                 <div class="col-md-6">
-                  <input value="{{ old('age') }}" id="age" type="number"
-                    class="form-control @error('age') is-invalid @enderror"
-                    age="age" value="{{ old('age') }}" 
-                    autocomplete="age" autofocus>
+                  <input value="{{ old('age') }}" id="phone_number" type="tel"
+                    class="@error('age') is-invalid @enderror form-control"
+                    name="age" autocomplete="age">
 
                   @error('age')
                     <span class="invalid-feedback" role="alert">
@@ -82,10 +81,6 @@
                   @enderror
                 </div>
               </div>
-
-
-
-
 
 
 
